@@ -18,3 +18,26 @@ document.getElementById("btn").addEventListener("click", () => {
     imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
   }
 });
+
+document.getElementById("type").addEventListener("change", () => {
+
+  document.getElementById("root").innerHTML = "";
+
+  let selectedType = document.getElementById("type").value;
+  for(i=0; i<typeResult.length; i++){
+    let eachType = typeResult[i];
+    if(eachType[0] === selectedType){
+      let createNumberCard = document.createElement("div");
+      createNumberCard.className = "numberCard";
+      mainBox.appendChild(createNumberCard);
+      createNumberCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" + 
+      imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
+    }else if(eachType[1] === selectedType){
+      let createNumberCard = document.createElement("div");
+      createNumberCard.className = "numberCard";
+      mainBox.appendChild(createNumberCard);
+      createNumberCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" + 
+      imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
+    }
+  }
+});
