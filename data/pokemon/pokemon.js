@@ -18,7 +18,7 @@ const POKEMON = {
     "spawn_time": "20:00",
     "multipliers": [1.58],
     "weaknesses": [
-      "Fire",
+      "Fire", 
       "Ice",
       "Flying",
       "Psychic"
