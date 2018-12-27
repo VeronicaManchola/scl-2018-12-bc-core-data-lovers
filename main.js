@@ -18,3 +18,4 @@ document.getElementById("btn").addEventListener("click", () => {
     imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
   }
 });
+
