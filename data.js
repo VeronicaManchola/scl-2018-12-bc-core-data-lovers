@@ -1,20 +1,3 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
-
-<<<<<<< HEAD
-//const example = () => {
-  //return 'example';
-//};
-
-//window.example = example;
-=======
-// const example = () => {
-//   return 'example';
-// };
-
-// window.example = example;
->>>>>>> Veronica/master
-
 const data = POKEMON.pokemon;
 
 const printId = (data) => {
@@ -22,8 +5,7 @@ const printId = (data) => {
   for(i = 0; i < data.length; i++){
     id.push(data[i].id)
   };
-  return id;
-  }
+  return id;  }
 
 const printNumber = (data) => {
   let number = [];
@@ -57,7 +39,6 @@ const printType = (data) => {
   return type;
   }
 
-<<<<<<< HEAD
 //Testeando merge de cambios de master a Andrea
 
 
@@ -76,12 +57,12 @@ const printType = (data) => {
 //---------------------------------------------------------------------------------------------------
 
 //PREGUNTAR A MARCIA POR QUE SOLO ME TRAE GRASS Y POISON Y 149 UNDEFINED (VER FOTOS CELULAR)
- const data = POKEMON.pokemon;
- for (let i = 0; i < data.length; i++) {
-console.log(data[i].type); 
+ //const data = POKEMON.pokemon;
+ //for (let i = 0; i < data.length; i++) {
+//console.log(data[i].type); 
 
 
- }
+ //}
 
  //const data = POKEMON.pokemon;
  //for (let i = 0; i < data.length; i++) {
@@ -97,5 +78,3 @@ console.log(data[i].type);
 
   
  
-=======
->>>>>>> Veronica/master
