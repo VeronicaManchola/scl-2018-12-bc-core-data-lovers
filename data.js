@@ -38,9 +38,4 @@ const printType = (data) => {
   };
   return type;  }
 
-  const NewPokemon = POKEMON.filter (function (el) {
-
-    return (el.type === "fuego");
-
-  });
-
+  
