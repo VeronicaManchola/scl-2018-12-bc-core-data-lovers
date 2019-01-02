@@ -7,7 +7,7 @@ const nameResult = printName(data);
 const imageResult = printImage(data);
 const typeResult = printType(data);
 
-document.getElementById("btn").addEventListener("click", () => {
+window.onload=function(){
 
   document.getElementById("root").innerHTML = "";
   
@@ -18,7 +18,7 @@ document.getElementById("btn").addEventListener("click", () => {
     createCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" + 
     imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
   }
-});
+};
 
 document.getElementById("type").addEventListener("change", () => {
 
@@ -32,13 +32,13 @@ document.getElementById("type").addEventListener("change", () => {
       createCard.className = "card";
       mainBox.appendChild(createCard);
       createCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" + 
-      imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
+      imageResult[i] + ">" + "<p>" + typeResult[i].join(" ") + "</p>";
     }else if(eachType[1] === selectedType){
       createCard = document.createElement("div");
       createCard.className = "card";
       mainBox.appendChild(createCard);
       createCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" + 
-      imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
+      imageResult[i] + ">" + "<p>" + typeResult[i].join(" ") + "</p>";
     }
   }
 });
