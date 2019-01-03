@@ -7,6 +7,7 @@ const printId = (data) => {
   };
   return id;  }
 
+
 const printNumber = (data) => {
   let number = [];
   for(i = 0; i < data.length; i++){

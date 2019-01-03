@@ -1,58 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+  <link rel="stylesheet" href="style.css">
+  <title>Data Lovers</title>
 </head>
 
 <body>
-  <div class="container">
 
-    <h1>Pokemon</h1>
+  <header class="red-text">
+    <div class="container">
 
-  </div>
-  <header>
-    POKEDEX KANTO
+      <div class="row">
+        <div class="col s12">
+          <h1 class="z-depth-1 section">POKEDEX KANTO</h1>
   </header>
+  <section>
+    <div class="container">
+      <blockquote>
+        <h4>Para que te conviertas en un maestro Pokemon</h4> 
+      </blockquote>
 
-  <form name="form1" action="#" autocomplete="off">
-    <select id="type">
-      <option value="0" selected="selected">Tipo</option>
-      <option value="Grass">Planta</option>
-      <option value="Poison">Veneno</option>
-      <option value="Fire">Fuego</option>
-      <option value="Bug">Bicho</option>
-      <option value="Flying">Volador</option>
-      <option value="Normal">Normal</option>
-      <option value="Electric">Eléctrico</option>
-      <option value="Ground">Tierra</option>
-      <option value="Water">Agua</option>
-      <option value="Fighting">Lucha</option>
-      <option value="Psychic">Psíquico</option>
-      <option value="Rock">Roca</option>
-      <option value="Ghost">Fantasma</option>
-      <option value="Ice">Hielo</option>
-      <option value="Dragon">Dragon</option>
-    </select>
-  </form>
+      <form name="form1">
+        <select id="type">
+          <option value="0" selected="selected">Tipo</option>
+          <option value="Grass">Planta</option>
+          <option value="Poison">Veneno</option>
+          <option value="Fire">Fuego</option>
+          <option value="Bug">Bicho</option>
+          <option value="Flying">Volador</option>
+          <option value="Normal">Normal</option>
+          <option value="Electric">Eléctrico</option>
+          <option value="Ground">Tierra</option>
+          <option value="Water">Agua</option>
+          <option value="Fighting">Lucha</option>
+          <option value="Psychic">Psíquico</option>
+          <option value="Rock">Roca</option>
+          <option value="Ghost">Fantasma</option>
+          <option value="Ice">Hielo</option>
+          <option value="Dragon">Dragon</option>
+        </select>
+      </form>
 
-  <form name="formulario2" action="#">
-    <select name="orden alfabetico">
-      <option value="0">Orden</option>
-      <option value="0">A-Z</option>
-      <option value="0">Z-A</option>
-      <option value="0">1-151</option>
-      <option value="0">151-1</option>
-    </select>
-  </form>
+      <form name="form2">
+        <select id="ordenalfabetico">
+          <option value="0">Orden</option>
+          <option value="0">A-Z</option>
+          <option value="0">Z-A</option>
+          <option value="0">1-151</option>
+          <option value="0">151-1</option>
+        </select>
+      </form>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row" id="root">
+       
+      </div>
 
 
-  <div id="root"></div>
+    </div>
+
+  </section>
   <!-- <script src="./data/injuries/injuries.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
   <!-- <script src="./data/steam/steam.js"></script> -->
@@ -60,9 +81,9 @@
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="data.js"></script>
   <script src="main.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </div>
 </body>
 
 </html>
