@@ -70,6 +70,7 @@ document.getElementById("type").addEventListener("change", () => {
   const typeResult = printType(newData);
 
   let selectedType = document.getElementById("type").value;
+
   for(i=0; i<typeResult.length; i++){
     let finalType = [];
     
