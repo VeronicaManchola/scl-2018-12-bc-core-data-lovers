@@ -1,42 +1,97 @@
 const data = POKEMON.pokemon;
 
-const printId = (data) => {
+
+
+function sortedAz(data){ 
+  const sortedData = data;
+  data.sort(function(a, b){
+    if(a.name < b.name){
+      return -1;
+    }
+    if(a.name > b.name){
+      return 1;
+    }
+  })
+  return sortedData;
+};
+
+function sortedZa(data){
+  const sortedData = data;
+  data.sort(function(a, b){
+    if(b.name < a.name){
+      return -1;
+    }
+    if(b.name > a.name){
+      return 1;
+    }
+  })
+  return sortedData;
+};
+
+function sortedLower(data){
+  const sortedData = data;
+  data.sort(function(a, b){
+    if(a.num < b.num){
+      return -1;
+    }
+    if(a.num > b.num){
+      return 1;
+    }
+  })
+  return sortedData;
+};
+
+function sortedHigher(data){
+  const sortedData = data;
+  data.sort(function(a, b){
+    if(b.num < a.num){
+      return -1;
+    }
+    if(b.num > a.num){
+      return 1;
+    }
+  })
+  return sortedData;
+};
+
+
+const printId = (newData) => {
   let id = [];
-  for(i = 0; i < data.length; i++){
-    id.push(data[i].id)
+  for(i = 0; i < newData.length; i++){
+    id.push(newData[i].id)
   };
-  return id;  }
+  return id;
+}
 
 
 const printNumber = (data) => {
   let number = [];
-  for(i = 0; i < data.length; i++){
-    number.push(data[i].num)
+  for(i = 0; i < newData.length; i++){
+    number.push(newData[i].num)
   };
   return number;
-  }
+}
 
-const printName = (data) => {
+const printName = (newData) => {
   let name = [];
-  for(i = 0; i < data.length; i++){
-    name.push(data[i].name)
+  for(i = 0; i < newData.length; i++){
+    name.push(newData[i].name)
   };
   return name;
-  }
+}
 
-const printImage = (data) => {
+const printImage = (newData) => {
   let image = [];
-  for(i = 0; i < data.length; i++){
-    image.push(data[i].img)
+  for(i = 0; i < newData.length; i++){
+    image.push(newData[i].img)
   };
   return image;
-  }
+}
 
-const printType = (data) => {
+const printType = (newData) => {
   let type = [];
-  for(i = 0; i < data.length; i++){
-    type.push(data[i].type)
+  for(i = 0; i < newData.length; i++){
+    type.push(newData[i].type)
   };
-  return type;  }
-
-  
+  return type;
+}

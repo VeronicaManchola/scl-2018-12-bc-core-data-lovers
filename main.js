@@ -24,6 +24,13 @@ document.getElementById("type").addEventListener("change", () => {
 
   document.getElementById("root").innerHTML = "";
 
+  const newData = sortedLower(data);
+
+  const numberResult = printNumber(newData);
+  const nameResult = printName(newData);
+  const imageResult = printImage(newData);
+  const typeResult = printType(newData);
+
   let selectedType = document.getElementById("type").value;
   for (i = 0; i < typeResult.length; i++) {
     let eachType = typeResult[i];
