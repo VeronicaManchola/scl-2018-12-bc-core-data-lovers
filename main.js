@@ -63,7 +63,6 @@ document.getElementById("type").addEventListener("change", () => {
   document.getElementById("root").innerHTML = "";
 
   const newData = sortedLower(data);
-
   const numberResult = printNumber(newData);
   const nameResult = printName(newData);
   const imageResult = printImage(newData);
