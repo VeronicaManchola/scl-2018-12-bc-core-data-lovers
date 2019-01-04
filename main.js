@@ -1,13 +1,13 @@
 let mainBox = document.getElementById("root");
 let createCard;
 
-const idResult = printId(data);
-const numberResult = printNumber(data);
-const nameResult = printName(data);
-const imageResult = printImage(data);
-const typeResult = printType(data);
-
+//Imprime tarjetas al cargar la pagina
 window.onload = function () {
+  const idResult = printId(data);
+  const numberResult = printNumber(data);
+  const nameResult = printName(data);
+  const imageResult = printImage(data);
+  const typeResult = printType(data);
 
   document.getElementById("root").innerHTML = "";
 
