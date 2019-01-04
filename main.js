@@ -1,6 +1,7 @@
 let mainBox = document.getElementById("root");
 let createCard;
 
+//Imprime tarjetas al cargar la pagina
 window.onload=function(){
 
   document.getElementById("root").innerHTML = "";
@@ -71,7 +72,6 @@ document.getElementById("type").addEventListener("change", () => {
   let selectedType = document.getElementById("type").value;
   for(i=0; i<typeResult.length; i++){
     let finalType = [];
-    
     if(typeResult[i][0] === selectedType || typeResult[i][1] === selectedType){
       createCard = document.createElement("div");
       createCard.className = "card";
