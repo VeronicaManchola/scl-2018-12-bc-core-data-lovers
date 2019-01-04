@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="utf-8">
@@ -9,45 +9,39 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Data Lovers</title>
+
 </head>
 
 <body>
+  <div class="container">
 
-  <header class="red-text">
-    <div class="container">
+    <h1>Pokemon</h1>
 
-      <div class="row">
-        <div class="col s12">
-          <h1 class="z-depth-1 section">POKEDEX KANTO</h1>
+  </div>
+  <header>
+    POKEDEX KANTO
   </header>
-  <section>
-    <div class="container">
-      <blockquote>
-        <h4>Para que te conviertas en un maestro Pokemon</h4> 
-      </blockquote>
 
-      <form name="form1">
-        <select id="type">
-          <option value="0" selected="selected">Tipo</option>
-          <option value="Grass">Planta</option>
-          <option value="Poison">Veneno</option>
-          <option value="Fire">Fuego</option>
-          <option value="Bug">Bicho</option>
-          <option value="Flying">Volador</option>
-          <option value="Normal">Normal</option>
-          <option value="Electric">Eléctrico</option>
-          <option value="Ground">Tierra</option>
-          <option value="Water">Agua</option>
-          <option value="Fighting">Lucha</option>
-          <option value="Psychic">Psíquico</option>
-          <option value="Rock">Roca</option>
-          <option value="Ghost">Fantasma</option>
-          <option value="Ice">Hielo</option>
-          <option value="Dragon">Dragón</option>
-        </select>
-      </form>
+  <form name="form1" action="#" autocomplete="off">
+    <select id="type">
+      <option value="0" selected="selected">Tipo</option>
+      <option value="Grass">Planta</option>
+      <option value="Poison">Veneno</option>
+      <option value="Fire">Fuego</option>
+      <option value="Bug">Bicho</option>
+      <option value="Flying">Volador</option>
+      <option value="Normal">Normal</option>
+      <option value="Electric">Eléctrico</option>
+      <option value="Ground">Tierra</option>
+      <option value="Water">Agua</option>
+      <option value="Fighting">Lucha</option>
+      <option value="Psychic">Psíquico</option>
+      <option value="Rock">Roca</option>
+      <option value="Ghost">Fantasma</option>
+      <option value="Ice">Hielo</option>
+      <option value="Dragon">Dragón</option>
+    </select>
+  </form>
 
   <form name="form2" action="#" autocomplete="off">
     <select id="order">
@@ -60,9 +54,7 @@
   </form>
 
 
-    </div>
-
-  </section>
+  <div id="root"></div>
   <!-- <script src="./data/injuries/injuries.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
   <!-- <script src="./data/steam/steam.js"></script> -->
@@ -70,9 +62,9 @@
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="data.js"></script>
   <script src="main.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
 </body>
 
 </html>
