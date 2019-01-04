@@ -18,7 +18,7 @@ window.onload=function(){
   for(i=0; i < idResult.length; i++){
     let finalType = [];
     createCard = document.createElement("div");
-    createCard.className = "card";
+    createCard.className = "col s4";
     mainBox.appendChild(createCard);
     for(a=0; a < typeResult[i].length; a++){
       if(typeResult[i][a] === "Grass"){
@@ -75,7 +75,7 @@ document.getElementById("type").addEventListener("change", () => {
     
     if(typeResult[i][0] === selectedType || typeResult[i][1] === selectedType){
       createCard = document.createElement("div");
-      createCard.className = "card";
+      createCard.className = "col s4";
       mainBox.appendChild(createCard);
       for(a=0; a < typeResult[i].length; a++){
         if(typeResult[i][a] === "Grass"){
@@ -140,7 +140,7 @@ document.getElementById("order").addEventListener("change", () => {
   for(i=0; i < idResult.length; i++){
     let finalType = [];
     createCard = document.createElement("div");
-    createCard.className = "card";
+    createCard.className = "col s4";
     mainBox.appendChild(createCard);
     for(a=0; a < typeResult[i].length; a++){
       if(typeResult[i][a] === "Grass"){
