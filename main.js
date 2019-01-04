@@ -1,6 +1,7 @@
 let mainBox = document.getElementById("root");
 let createCard;
 
+//Imprime tarjetas al cargar la pagina
 window.onload=function(){
 
   document.getElementById("root").innerHTML = "";
