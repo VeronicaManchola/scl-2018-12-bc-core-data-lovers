@@ -9,14 +9,14 @@ const typeResult = printType(data);
 
 window.onload = function () {
 
-  //document.getElementById("root").innerHTML = "";
+  document.getElementById("root").innerHTML = "";
 
   for (i = 0; i < idResult.length; i++) {
     createCard = document.createElement("div");
     createCard.className = "card";
     mainBox.appendChild(createCard);
     createCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" +
-      imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>" + "<p>";
+      imageResult[i] + ">" + "<p>" + typeResult[i] + "</p>";
   }
 };
 
