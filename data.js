@@ -64,7 +64,9 @@ const printId = (newData) => {
 }
 
 
-const printNumber = (data) => {
+
+
+const printNumber = (newData) => {
   let number = [];
   for(i = 0; i < newData.length; i++){
     number.push(newData[i].num)
