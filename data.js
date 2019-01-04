@@ -95,5 +95,3 @@ const printType = (newData) => {
   };
   return type;
 }
-
-const translateType
