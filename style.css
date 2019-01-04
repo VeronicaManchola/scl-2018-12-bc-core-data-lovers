@@ -1,4 +1,18 @@
+body{
+    background: linear-gradient(145.88deg, #FFFFFF 4.85%, #B5FEA7 38.52%, #B5FEA7 46.48%);
+}
+
+header{
+    background-image: url(Imágenes/header.png);
+    background-size: cover;
+    background-position: center;
+    color: #1D8696;
+}
 select{
     display: block;
 }
 
+.card-title{
+    color: #1D8696;
+    height: 71px;
+};

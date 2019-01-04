@@ -18,7 +18,7 @@ window.onload=function(){
   for(i=0; i < idResult.length; i++){
     let finalType = [];
     createCard = document.createElement("div");
-    createCard.className = "card";
+    //createCard.className = "col l5";
     mainBox.appendChild(createCard);
     for(a=0; a < typeResult[i].length; a++){
       if(typeResult[i][a] === "Grass"){
@@ -53,8 +53,19 @@ window.onload=function(){
         finalType.push("Dragón");
       }
     }
-    createCard.innerHTML += "<h4>" + numberResult[i] + " " + nameResult[i] + "</h4>" + "<img src=" + 
-    imageResult[i] + ">" + "<p>" + finalType.join(" ") + "</p>";
+    createCard.innerHTML += 
+    `<div class="col l3">
+      <div class="card small">
+        <div class="card-title">#${numberResult[i]} ${nameResult[i]}</div>
+        <div class="card-image" style="overflow: initial">
+          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${numberResult[i]}.png">
+          <a class="btn-floating halfway-fab waves-effect waves-light #1D8696"><i class="material-icons">info</i></a>
+        </div>
+        <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+          <p>${finalType.join(" - ")}</p>
+        </div>
+      </div>
+    </div>`;
   }
 };
 
@@ -74,7 +85,7 @@ document.getElementById("type").addEventListener("change", () => {
     let finalType = [];
     if(typeResult[i][0] === selectedType || typeResult[i][1] === selectedType){
       createCard = document.createElement("div");
-      createCard.className = "card";
+      //createCard.className = "col l2";
       mainBox.appendChild(createCard);
       for(a=0; a < typeResult[i].length; a++){
         if(typeResult[i][a] === "Grass"){
