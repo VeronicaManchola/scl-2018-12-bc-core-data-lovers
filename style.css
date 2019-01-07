@@ -1,18 +1,33 @@
 body{
-    background: linear-gradient(145.88deg, #FFFFFF 4.85%, #B5FEA7 38.52%, #B5FEA7 46.48%);
+    background: linear-gradient(145.88deg, #E5FFE0 3.18%, #B5FEA7 28.3%, #B5FEA7 46.48%);
+    color: #1D8696;
 }
 
 header{
-    background-image: url(Imágenes/header.png);
-    background-size: cover;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ), url(Imágenes/header.png);
+    background-size: auto;
     background-position: center;
-    color: #1D8696;
+    text-align: center;
+    color: #B5FEA7;
 }
 select{
     display: block;
 }
 
+h5{
+    padding: 0.75rem;
+    
+}
+
+blockquote{
+    margin: 20px 0.75rem;
+    border-left: 5px solid #000000;
+}
+
 .card-title{
-    color: #1D8696;
+    
     height: 71px;
 };
