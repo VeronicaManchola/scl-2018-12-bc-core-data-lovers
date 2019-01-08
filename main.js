@@ -17,8 +17,7 @@ window.onload = function () {
   createCard = document.createElement("div");
   mainBox.appendChild(createCard);
 
-  createTotal.innerHTML = `Total de tu selección: ${totalPokemon}`
-
+ 
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
@@ -36,6 +35,9 @@ window.onload = function () {
   });
 };
 
+  
+  
+
 document.getElementById("type").addEventListener("change", () => {
 
   document.getElementById("root").innerHTML = "";
@@ -45,7 +47,6 @@ document.getElementById("type").addEventListener("change", () => {
   const dataOnSort = sortData(data, selectedOrder);
   const newData = filterData(dataOnSort,selectedType);
   const totalPokemon = computeStats(newData);
-
   createTotal = document.createElement("h5");
   mainBox.appendChild(createTotal);
 
@@ -103,5 +104,5 @@ document.getElementById("order").addEventListener("change", () => {
           </div>
         </div>
       </div>`;
-    });
   });
+});
