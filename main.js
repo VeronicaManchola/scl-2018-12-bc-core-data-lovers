@@ -1,6 +1,9 @@
+let mainBody = document.getElementsByTagName("body")[0];
+let header = document.getElementById("header");
 let mainBox = document.getElementById("root");
 let createCard;
 let createTotal;
+let createModal;
 
 //Imprime tarjetas al cargar la pagina
 window.onload = function () {
@@ -22,16 +25,59 @@ window.onload = function () {
     createCard.innerHTML +=
       `<div class="col l3">
         <div class="card small">
-        <div class="card-title">#${element.num} ${element.name}</div>
-          <div class="card-image" style="overflow: initial">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
-            <a class="btn-floating halfway-fab waves-effect waves-light #1D8696"><i class="material-icons">info</i></a>
-          </div>
-          <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
-            <p>${element.type.join(" - ")}</p>
+          <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
+            <div class="card-title">#${element.num} ${element.name}</div>
+              <div class="card-image" style="overflow: initial">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+              </div>
+              <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+                <p>${element.type.join(" - ")}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>`;
+  });
+
+  newData.forEach(element => {
+    let button = document.getElementById("infobtn" + element.id);
+    button.onclick = function () {
+      createModal = document.createElement("div");
+      createModal.setAttribute("id", "modal1");
+      createModal.setAttribute("class", "modal");
+      mainBody.insertBefore(createModal,header);
+
+      createModal.innerHTML = `
+      <div class="modal-content">
+        <div class="white">
+          <h4>#${element.num} ${element.name}</h4>
+          <div class="row">
+            <div class="col l5">
+              <div class="card-image">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+              </div>
+            </div>
+            <div class="col l6">
+              <div class="card-stacked">
+                <div class="card-content">
+                    <h6>Altura: ${element.height}</h6>
+                    <h6>Peso: ${element.weight}</h6>
+                    <h6>Huevo: ${element.egg}</h6>
+                    <h6>Debilidades: ${element.weaknesses.join(" - ")}</h6>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>`;
+    createModal.style.display = "block";  
+
+    window.onclick = function(event) {
+      if (event.target == createModal) {
+        createModal.style.display = "none";
+      }
+    }
+    }
   });
 }
 
@@ -43,7 +89,7 @@ document.getElementById("type").addEventListener("change", () => {
   let selectedOrder = document.getElementById("order").value;
   let selectedType = document.getElementById("type").value;
   const dataOnSort = sortData(data, selectedOrder);
-  const newData = filterData(dataOnSort,selectedType);
+  const newData = filterData(dataOnSort, selectedType);
   const totalPokemon = computeStats(newData);
   createTotal = document.createElement("h5");
   mainBox.appendChild(createTotal);
@@ -57,17 +103,60 @@ document.getElementById("type").addEventListener("change", () => {
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
-        <div class="card small">
+      <div class="card small">
+        <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
           <div class="card-title">#${element.num} ${element.name}</div>
-          <div class="card-image" style="overflow: initial">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
-            <a class="btn-floating halfway-fab waves-effect waves-light #1D8696"><i class="material-icons">info</i></a>
+            <div class="card-image" style="overflow: initial">
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+            </div>
+            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+              <p>${element.type.join(" - ")}</p>
+            </div>
           </div>
-          <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
-            <p>${element.type.join(" - ")}</p>
+        </a>
+      </div>
+    </div>`;
+  });
+
+  newData.forEach(element => {
+    let button = document.getElementById("infobtn" + element.id);
+    button.onclick = function () {
+      createModal = document.createElement("div");
+      createModal.setAttribute("id", "modal1");
+      createModal.setAttribute("class", "modal");
+      mainBody.insertBefore(createModal,header);
+
+      createModal.innerHTML = `
+      <div class="modal-content">
+        <div class="white">
+          <h4>#${element.num} ${element.name}</h4>
+          <div class="row">
+            <div class="col l5">
+              <div class="card-image">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+              </div>
+            </div>
+            <div class="col l6">
+              <div class="card-stacked">
+                <div class="card-content">
+                    <h6>Altura: ${element.height}</h6>
+                    <h6>Peso: ${element.weight}</h6>
+                    <h6>Huevo: ${element.egg}</h6>
+                    <h6>Debilidades: ${element.weaknesses.join(" - ")}</h6>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>`;
+    createModal.style.display = "block";  
+
+    window.onclick = function(event) {
+      if (event.target == createModal) {
+        createModal.style.display = "none";
+      }
+    }
+    }
   });
 
 });
@@ -76,7 +165,7 @@ document.getElementById("order").addEventListener("change", () => {
   document.getElementById("root").innerHTML = "";
   let selectedOrder = document.getElementById("order").value;
   let selectedType = document.getElementById("type").value;
-  const dataOnFilter = filterData(data,selectedType);
+  const dataOnFilter = filterData(data, selectedType);
   const newData = sortData(dataOnFilter, selectedOrder);
   const totalPokemon = computeStats(newData);
 
@@ -88,21 +177,65 @@ document.getElementById("order").addEventListener("change", () => {
 
   createTotal.innerHTML = `Total de tu selección: ${totalPokemon}`
 
-  createTotal
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
-        <div class="card small">
+      <div class="card small">
+        <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
           <div class="card-title">#${element.num} ${element.name}</div>
-          <div class="card-image" style="overflow: initial">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
-            <a class="btn-floating halfway-fab waves-effect waves-light #1D8696"><i class="material-icons">info</i></a>
+            <div class="card-image" style="overflow: initial">
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+            </div>
+            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+              <p>${element.type.join(" - ")}</p>
+            </div>
           </div>
-          <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
-            <p>${element.type.join(" - ")}</p>
+        </a>
+      </div>
+    </div>`;
+  });
+
+  newData.forEach(element => {
+    let button = document.getElementById("infobtn" + element.id);
+    button.onclick = function () {
+      createModal = document.createElement("div");
+      createModal.setAttribute("id", "modal1");
+      createModal.setAttribute("class", "modal");
+      mainBody.insertBefore(createModal,header);
+
+      createModal.innerHTML = `
+      <div class="modal-content">
+        <div class="white">
+          <h4>#${element.num} ${element.name}</h4>
+          <div class="row">
+            <div class="col l5">
+              <div class="card-image">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+              </div>
+            </div>
+            <div class="col l6">
+              <div class="card-stacked">
+                <div class="card-content">
+                    <h6>Altura: ${element.height}</h6>
+                    <h6>Peso: ${element.weight}</h6>
+                    <h6>Huevo: ${element.egg}</h6>
+                    <h6>Debilidades: ${element.weaknesses.join(" - ")}</h6>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>`;
+
+    createModal.style.display = "block";  
+
+    window.onclick = function(event) {
+      if (event.target == createModal) {
+        createModal.style.display = "none";
+      }
+    }
+    }
   });
-  });
+});
+
 
