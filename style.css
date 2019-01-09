@@ -44,8 +44,8 @@ blockquote{
 
 .card.small:hover,
 .card.small:focus{
-    box-shadow: 2px 7px 7px 2px rgba(0,0,0,0.14);
-    transform: translateY(-0.25em);
+    box-shadow: 2px 7px 7px 2px rgba(0,0,0,0.65);
+    transform: translateY(-0.30em);
 }
 
 .modal{
