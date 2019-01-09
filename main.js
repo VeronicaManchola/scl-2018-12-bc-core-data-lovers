@@ -1,3 +1,4 @@
+const data = POKEMON.pokemon;
 let mainBody = document.getElementsByTagName("body")[0];
 let header = document.getElementById("header");
 let mainBox = document.getElementById("root");
@@ -11,8 +12,8 @@ window.onload = function () {
   document.getElementById("root").innerHTML = "";
 
   let selectedType = document.getElementById("type").value;
-  const newData = filterData(data, selectedType);
-  const totalPokemon = computeStats(newData);
+  const newData = pokemonData.filterData(data, selectedType);
+  const totalPokemon = pokemonData.computeStats(newData);
 
   createTotal = document.createElement("h5");
   mainBox.appendChild(createTotal);
@@ -88,9 +89,9 @@ document.getElementById("type").addEventListener("change", () => {
 
   let selectedOrder = document.getElementById("order").value;
   let selectedType = document.getElementById("type").value;
-  const dataOnSort = sortData(data, selectedOrder);
-  const newData = filterData(dataOnSort, selectedType);
-  const totalPokemon = computeStats(newData);
+  const dataOnSort = pokemonData.sortData(data, selectedOrder);
+  const newData = pokemonData.filterData(dataOnSort, selectedType);
+  const totalPokemon = pokemonData.computeStats(newData);
 
   createTotal = document.createElement("h5");
   mainBox.appendChild(createTotal);
@@ -165,9 +166,9 @@ document.getElementById("order").addEventListener("change", () => {
   document.getElementById("root").innerHTML = "";
   let selectedOrder = document.getElementById("order").value;
   let selectedType = document.getElementById("type").value;
-  const dataOnFilter = filterData(data, selectedType);
-  const newData = sortData(dataOnFilter, selectedOrder);
-  const totalPokemon = computeStats(newData);
+  const dataOnFilter = pokemonData.filterData(data, selectedType);
+  const newData = pokemonData.sortData(dataOnFilter, selectedOrder);
+  const totalPokemon = pokemonData.computeStats(newData);
 
   createTotal = document.createElement("h5");
   mainBox.appendChild(createTotal);
