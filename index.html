@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <title>Pokedex Kanto</title>
   <link rel="shortcut icon" href="./Imágenes/favicon.ico">
   <meta charset="UTF-8">
@@ -10,72 +11,71 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import Google Font-->
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="style.css">
- 
+
 </head>
 
 <body>
 
-  <header>
+  <header id="header">
     <div class="container">
-
       <div class="row">
         <div class="col l12">
           <h1 class="z-depth-1 section">POKEDEX KANTO</h1>
-  </header>
-  <section>
-    <div class="container">
-      <blockquote>
-        <h4>Para que te conviertas en un maestro Pokemon</h4>
-      </blockquote>
-      <div class="row">
-        <div class="col l6">
-          <form name="form1" action="#" autocomplete="off">
-            <select id="type">
-              <option value="0" selected="selected">Tipo</option>
-              <option value="Grass">Planta</option>
-              <option value="Poison">Veneno</option>
-              <option value="Fire">Fuego</option>
-              <option value="Bug">Bicho</option>
-              <option value="Flying">Volador</option>
-              <option value="Normal">Normal</option>
-              <option value="Electric">Eléctrico</option>
-              <option value="Ground">Tierra</option>
-              <option value="Water">Agua</option>
-              <option value="Fighting">Lucha</option>
-              <option value="Psychic">Psíquico</option>
-              <option value="Rock">Roca</option>
-              <option value="Ghost">Fantasma</option>
-              <option value="Ice">Hielo</option>
-              <option value="Dragon">Dragón</option>
-            </select>
-          </form>
-        </div>
-
-        <div class="col l6">
-          <form name="form2" action="#" autocomplete="off">
-            <select id="order">
-              <option value="0" selected="selected">Orden</option>
-              <option value="az">A-Z</option>
-              <option value="za">Z-A</option>
-              <option value="lower">1-151</option>
-              <option value="higher">151-1</option>
-            </select>
-          </form>
         </div>
       </div>
-
     </div>
-  </section>
+  </header>
 
-  <section>
-    <div class="container">
-      <div id="root" class="row"></div>
+  <div class="container" id="selects">
+    <blockquote>
+      <h4>Para que te conviertas en un maestro Pokemon</h4>
+    </blockquote>
+    <div class="row">
+      <div class="col l6">
+        <form name="form1" action="#" autocomplete="off">
+          <select id="type">
+            <option value="0" selected="selected">Tipo</option>
+            <option value="Grass">Planta</option>
+            <option value="Poison">Veneno</option>
+            <option value="Fire">Fuego</option>
+            <option value="Bug">Bicho</option>
+            <option value="Flying">Volador</option>
+            <option value="Normal">Normal</option>
+            <option value="Electric">Eléctrico</option>
+            <option value="Ground">Tierra</option>
+            <option value="Water">Agua</option>
+            <option value="Fighting">Lucha</option>
+            <option value="Psychic">Psíquico</option>
+            <option value="Rock">Roca</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Ice">Hielo</option>
+            <option value="Dragon">Dragón</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="col l6">
+        <form name="form2" action="#" autocomplete="off">
+          <select id="order">
+            <option value="0" selected="selected">Orden</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+            <option value="lower">1-151</option>
+            <option value="higher">151-1</option>
+          </select>
+        </form>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <div class="container">
+    <div id="root" class="row"></div>
+  </div>
+
   <!-- <script src="./data/injuries/injuries.js"></script> -->
   <script src="./data/pokemon/pokemon.js"></script>
   <!-- <script src="./data/steam/steam.js"></script> -->
