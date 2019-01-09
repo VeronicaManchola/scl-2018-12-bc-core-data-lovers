@@ -33,10 +33,8 @@ window.onload = function () {
         </div>
       </div>`;
   });
-};
+}
 
-  
-  
 
 document.getElementById("type").addEventListener("change", () => {
 
@@ -55,6 +53,7 @@ document.getElementById("type").addEventListener("change", () => {
 
   createTotal.innerHTML = `Total de tu selección: ${totalPokemon}`
 
+
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
@@ -70,8 +69,8 @@ document.getElementById("type").addEventListener("change", () => {
         </div>
       </div>`;
   });
-});
 
+});
 document.getElementById("order").addEventListener("change", () => {
 
   document.getElementById("root").innerHTML = "";
@@ -105,4 +104,5 @@ document.getElementById("order").addEventListener("change", () => {
         </div>
       </div>`;
   });
-});
+  });
+
