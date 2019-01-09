@@ -103,17 +103,19 @@ document.getElementById("type").addEventListener("change", () => {
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
-        <div class="card small">
+      <div class="card small">
+        <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
           <div class="card-title">#${element.num} ${element.name}</div>
-          <div class="card-image" style="overflow: initial">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
-            <a class="btn-floating halfway-fab waves-effect waves-light #1D8696" id="infobtn${element.id}" data-target="modal1"><i class="material-icons">info</i></a>
+            <div class="card-image" style="overflow: initial">
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+            </div>
+            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+              <p>${element.type.join(" - ")}</p>
+            </div>
           </div>
-          <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
-            <p>${element.type.join(" - ")}</p>
-          </div>
-        </div>
-      </div>`;
+        </a>
+      </div>
+    </div>`;
   });
 
   newData.forEach(element => {
@@ -178,17 +180,19 @@ document.getElementById("order").addEventListener("change", () => {
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
-        <div class="card small">
+      <div class="card small">
+        <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
           <div class="card-title">#${element.num} ${element.name}</div>
-          <div class="card-image" style="overflow: initial">
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
-            <a class="btn-floating halfway-fab waves-effect waves-light #1D8696" id="infobtn${element.id}" data-target="modal1"><i class="material-icons">info</i></a>
+            <div class="card-image" style="overflow: initial">
+              <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+            </div>
+            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+              <p>${element.type.join(" - ")}</p>
+            </div>
           </div>
-          <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
-            <p>${element.type.join(" - ")}</p>
-          </div>
-        </div>
-      </div>`;
+        </a>
+      </div>
+    </div>`;
   });
 
   newData.forEach(element => {
