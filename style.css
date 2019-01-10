@@ -8,11 +8,13 @@ header{
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.3),
         rgba(0, 0, 0, 0.3)
-      ), url(Imágenes/header.png);
-    background-size: auto;
+      ), url(Imágenes/pokemon-i-choose-you.jpg);
+    background-size: cover;
     background-position: center;
     text-align: center;
     color: #B5FEA7;
+    padding: 5%;
+    background-repeat: no-repeat;
 }
 select{
     display: block;
