@@ -15,9 +15,20 @@ header{
     padding: 4% 0;
     background-repeat: no-repeat;
 }
-select{
-    display: block;
+
+.row .col.s10{
+    justify-content: center;
+    display: flex;
+}
+
+.select-wrapper input.select-dropdown{
+    border-bottom: 1px solid rgb(8, 42, 48);
+    font-size: 22px;
+}
+
+button, input, optgroup, select, textarea{
     font-family: inherit;
+    color: rgb(8, 42, 48);
 }
 
 h5{
@@ -35,6 +46,12 @@ h5{
     width: inherit;
 }
 
+.card
+.card-content{
+    font-size: 16px;
+    padding: 20px 0px;
+}
+
 .buttonCard{
     cursor: pointer;
     color: inherit;
@@ -42,6 +59,10 @@ h5{
 
 .card.small{
     transition: 0.25s;
+    max-width: 235px;
+    min-width: 149px;
+    justify-content: center;
+    display: flex;
 }
 
 .card.small:hover,
