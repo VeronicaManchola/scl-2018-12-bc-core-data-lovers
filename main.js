@@ -13,7 +13,7 @@ window.onload = function () {
 
   let selectedType = document.getElementById("type").value;
   const newData = window.pokemonData.filterData(data, selectedType);
- 
+
 
   createTotal = document.createElement("h5");
   mainBox.appendChild(createTotal);
@@ -21,7 +21,7 @@ window.onload = function () {
   createCard = document.createElement("div");
   mainBox.appendChild(createCard);
 
- 
+
   newData.forEach(element => {
     createCard.innerHTML +=
       `<div class="col l3">
@@ -46,7 +46,7 @@ window.onload = function () {
       createModal = document.createElement("div");
       createModal.setAttribute("id", "modal1");
       createModal.setAttribute("class", "modal");
-      mainBody.insertBefore(createModal,header);
+      mainBody.insertBefore(createModal, header);
 
       createModal.innerHTML = `
       <div class="modal-content">
@@ -71,13 +71,13 @@ window.onload = function () {
           </div>
         </div>
       </div>`;
-    createModal.style.display = "block";  
+      createModal.style.display = "block";
 
-    window.onclick = function(event) {
-      if (event.target == createModal) {
-        createModal.style.display = "none";
+      window.onclick = function (event) {
+        if (event.target == createModal) {
+          createModal.style.display = "none";
+        }
       }
-    }
     }
   });
 }
@@ -127,7 +127,7 @@ document.getElementById("type").addEventListener("change", () => {
       createModal = document.createElement("div");
       createModal.setAttribute("id", "modal1");
       createModal.setAttribute("class", "modal");
-      mainBody.insertBefore(createModal,header);
+      mainBody.insertBefore(createModal, header);
 
       createModal.innerHTML = `
       <div class="modal-content">
@@ -152,13 +152,13 @@ document.getElementById("type").addEventListener("change", () => {
           </div>
         </div>
       </div>`;
-    createModal.style.display = "block";  
+      createModal.style.display = "block";
 
-    window.onclick = function(event) {
-      if (event.target == createModal) {
-        createModal.style.display = "none";
+      window.onclick = function (event) {
+        if (event.target == createModal) {
+          createModal.style.display = "none";
+        }
       }
-    }
     }
   });
 
@@ -204,7 +204,7 @@ document.getElementById("order").addEventListener("change", () => {
       createModal = document.createElement("div");
       createModal.setAttribute("id", "modal1");
       createModal.setAttribute("class", "modal");
-      mainBody.insertBefore(createModal,header);
+      mainBody.insertBefore(createModal, header);
 
       createModal.innerHTML = `
       <div class="modal-content">
@@ -230,13 +230,13 @@ document.getElementById("order").addEventListener("change", () => {
         </div>
       </div>`;
 
-    createModal.style.display = "block";  
+      createModal.style.display = "block";
 
-    window.onclick = function(event) {
-      if (event.target == createModal) {
-        createModal.style.display = "none";
+      window.onclick = function (event) {
+        if (event.target == createModal) {
+          createModal.style.display = "none";
+        }
       }
-    }
     }
   });
 });
