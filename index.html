@@ -8,13 +8,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -22,21 +22,19 @@
 <body>
 
   <header id="header">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col l12">
-          <h1 class="z-depth-1 section">POKEDEX KANTO</h1>
+          <h1 class="">POKEDEX KANTO</h1>
         </div>
       </div>
-    </div>
-  </header>
-
-  <div class="container-fluid" id="selects">
-    <blockquote>
-      <h4>Para que te conviertas en un maestro Pokemon</h4>
-    </blockquote>
+      <div class="row">
+        <div class="col l8 offset-l2">
+          <h4>Para que te conviertas en un maestro Pokemon</h4>
+        </div>
+      </div>
     <div class="row">
-      <div class="col l3">
+      <div class="col l3 offset-l3">
         <form name="form1" action="#" autocomplete="off">
           <select id="type">
             <option value="0" selected="selected">Tipo</option>
@@ -72,12 +70,16 @@
       </div>
     </div>
   </div>
-
-  <div class="container-fluid">
+</header>
+<section id="pokemones">
+  <div class="container">
     <div id="root" class="row"></div><!--solo aqui-->
   </div>
+</section>  
 
   <!-- <script src="./data/injuries/injuries.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./data/pokemon/pokemon.js"></script>
   <!-- <script src="./data/steam/steam.js"></script> -->
   <!-- <script src="./data/worldbank/worldbank.js"></script> -->
@@ -85,7 +87,7 @@
   <script src="data.js"></script>
   <script src="main.js"></script>
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
 <footer></footer>
 </body>
 

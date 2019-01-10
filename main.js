@@ -100,7 +100,7 @@ document.getElementById("type").addEventListener("change", () => {
 
   newData.forEach(element => {
     createCard.innerHTML +=
-      `<div class="col s10 m4 l3">
+      `<div class="col s12 l3">
         <div class="card small">
           <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
             <div class="card-title">#${element.num} ${element.name}</div>

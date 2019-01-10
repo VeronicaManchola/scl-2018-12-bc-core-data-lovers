@@ -1,5 +1,4 @@
 body{
-    background: linear-gradient(145.88deg, #E5FFE0 3.18%, #B5FEA7 28.3%, #B5FEA7 46.48%);
     color: #1D8696;
     font-family: 'Lato', sans-serif;
 }
@@ -13,7 +12,7 @@ header{
     background-position: center;
     text-align: center;
     color: #B5FEA7;
-    padding: 5%;
+    padding: 4% 0;
     background-repeat: no-repeat;
 }
 select{
@@ -24,11 +23,6 @@ select{
 h5{
     padding: 0.75rem;
     
-}
-
-blockquote{
-    margin: 20px 0.75rem;
-    border-left: 5px solid #456A6C;
 }
 
 .card-title{
@@ -79,4 +73,8 @@ h4{
 
 .card.horizontal{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 0 0 rgba(0,0,0,0.2)
+}
+#pokemones{
+    background: linear-gradient(145.88deg, #E5FFE0 3.18%, #B5FEA7 28.3%, #B5FEA7 46.48%);
+    padding: 2% 0;
 }
