@@ -1,6 +1,6 @@
 window.pokemonData = {
   sortData: (data, selectedOrder) => {
-    if (selectedOrder === "0" || selectedOrder === "lower") {
+    if (selectedOrder === "0" || selectedOrder === "lower") { //cuando pinche Orden o 1-151//
       const sortedData = data;
       data.sort(function (a, b) {
         if (a.num < b.num) {
@@ -10,8 +10,8 @@ window.pokemonData = {
           return 1;
         }
       })
-      return sortedData;
-    } else if (selectedOrder === "higher") {
+      return sortedData; 
+    } else if (selectedOrder === "higher") { //cuando pinche 151-1//
       const sortedData = data;
       data.sort(function (a, b) {
         if (b.num < a.num) {
@@ -22,7 +22,7 @@ window.pokemonData = {
         }
       })
       return sortedData;
-    } else if (selectedOrder === "az") {
+    } else if (selectedOrder === "az") { //cuando pinche A-Z//
       const sortedData = data;
       data.sort(function (a, b) {
         if (a.name < b.name) {
@@ -33,7 +33,7 @@ window.pokemonData = {
         }
       })
       return sortedData;
-    } else if (selectedOrder === "za") {
+    } else if (selectedOrder === "za") { //cuando pinche Z-A//
       const sortedData = data;
       data.sort(function (a, b) {
         if (b.name < a.name) {
@@ -48,11 +48,11 @@ window.pokemonData = {
   },
 
   filterData: (data, selectedType) => {
-    if (selectedType === "0") {
+    if (selectedType === "0") { //cuando pinche Tipo en el select me retorna data completa//
       return data;
     }
     const filteredData = data.filter(element => {
-      return element.type[0] === selectedType || element.type[1] === selectedType;
+      return element.type[0] === selectedType || element.type[1] === selectedType;//selectedType de main.js//
     })
     return filteredData;
   },
