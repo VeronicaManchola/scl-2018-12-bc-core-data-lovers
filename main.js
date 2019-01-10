@@ -6,6 +6,10 @@ let createCard;
 let createTotal;
 let createModal;
 
+document.addEventListener('DOMContentLoaded', function() {
+  M.AutoInit();
+});
+
 //Imprime tarjetas al cargar la pagina
 window.onload = function () {
 
@@ -23,14 +27,14 @@ window.onload = function () {
  
   newData.forEach(element => {
     createCard.innerHTML +=
-      `<div class="col s10 m4 l3">
+      `<div class="col s7 m4 l3">
         <div class="card small">
           <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
             <div class="card-title">#${element.num} ${element.name}</div>
             <div class="card-image" style="overflow: initial">
               <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
-            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+            <div class="card-content">
               <p>${element.type.join(" - ")}</p>
             </div>
           </a>
@@ -100,14 +104,14 @@ document.getElementById("type").addEventListener("change", () => {
 
   newData.forEach(element => {
     createCard.innerHTML +=
-      `<div class="col s10 m4 l3">
+      `<div class="col s7 m4 l3">
         <div class="card small">
           <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
             <div class="card-title">#${element.num} ${element.name}</div>
             <div class="card-image" style="overflow: initial">
               <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
-            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+            <div class="card-content">
               <p>${element.type.join(" - ")}</p>
             </div>
           </a>
@@ -174,14 +178,14 @@ document.getElementById("order").addEventListener("change", () => {
 
   newData.forEach(element => {
     createCard.innerHTML +=
-      `<div class="col s10 m4 l3">
+      `<div class="col s7 m4 l3">
         <div class="card small">
           <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
             <div class="card-title">#${element.num} ${element.name}</div>
             <div class="card-image" style="overflow: initial">
               <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
-            <div class="card-content" style="font-size: 16px;padding: 20px 12px;">
+            <div class="card-content">
               <p>${element.type.join(" - ")}</p>
             </div>
           </a>
