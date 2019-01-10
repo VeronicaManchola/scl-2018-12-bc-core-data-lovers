@@ -50,7 +50,7 @@ window.pokemonData = {
   filterData: (data, selectedType) => {
     if (selectedType === "0") {
       return data;
-    };
+    }
     const filteredData = data.filter(element => {
       return element.type[0] === selectedType || element.type[1] === selectedType;
     })
