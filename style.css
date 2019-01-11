@@ -5,15 +5,23 @@ body{
 
 header{
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3)
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
       ), url(Imágenes/pokemon-i-choose-you.jpg);
     background-size: cover;
     background-position: center;
     text-align: center;
     color: #B5FEA7;
-    padding: 4% 0;
+    padding: 4% 0 0 0;
     background-repeat: no-repeat;
+}
+
+#group{
+    margin-top: 10%;
+    background: linear-gradient(145.88deg, #E5FFE0 3.18%, #B5FEA7 28.3%, #B5FEA7 46.48%);
+    border-radius: 5rem 5rem 0px 0px;
+    width: 50%;
+    margin-bottom: 0;
 }
 
 .row .col.s7{
@@ -96,6 +104,6 @@ h4{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 0 0 rgba(0,0,0,0.2)
 }
 #pokemones{
-    background: linear-gradient(145.88deg, #E5FFE0 3.18%, #B5FEA7 28.3%, #B5FEA7 46.48%);
+    background: linear-gradient(145.88deg, #B5FEA7 28.3%, #B5FEA7 46.48%);
     padding: 2% 0;
 }
