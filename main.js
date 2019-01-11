@@ -8,7 +8,7 @@ let createModal;
 
 //Inicialización de elementos de Materialize
 document.addEventListener('DOMContentLoaded', function () {
-  let M = M.AutoInit();
+  M.AutoInit();
 });
 
 //Imprime tarjetas de todos los pokemones al cargar la pagina
