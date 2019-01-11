@@ -16,7 +16,7 @@ header{
     background-repeat: no-repeat;
 }
 
-.row .col.s10{
+.row .col.s7{
     justify-content: center;
     display: flex;
 }
