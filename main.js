@@ -1,10 +1,23 @@
 //Declaracion de variables globals a utilizar en las funciones
-const data = window.POKEMON.pokemon;
 let mainBody = document.getElementsByTagName("body")[0];
 let header = document.getElementById("header");
 let mainBox = document.getElementById("root");
 let createTotal;
 let createModal;
+
+//Fetch del json que contiene la data de los pokemones
+const jsonFile = "./data/pokemon/pokemon.json";
+let jsonPokemon = "";
+fetch(jsonFile)
+  .then(response => response.json())
+  .then(jsonData => {
+    initialWindow(jsonData);
+    return jsonPokemon = jsonData;
+  })
+  .catch(error => {
+    mainBox.innerHTML = "Error: " + error;
+});
+
 
 //Inicialización de elementos de Materialize
 document.addEventListener('DOMContentLoaded', function () {
@@ -12,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Imprime tarjetas de todos los pokemones al cargar la pagina
-window.onload = function () {
-
-  //Limpia div root
-  mainBox.innerHTML = "";
+const initialWindow = (jsonPokemon) => {
+  
+  //Extrae el array pokemon de data
+  const data = jsonPokemon.pokemon;
 
   //Recorre la data y agrega cada tarjeta con la informacion requerida a mainBox
   data.forEach(element => {
@@ -80,13 +93,16 @@ window.onload = function () {
       }
     }
   });
-}
+};
 
 //Filtra pokemones por el tipo seleccionado e imprime las tarjetas respectivas
 document.getElementById("type").addEventListener("change", () => {
 
   //Limpia div root
   mainBox.innerHTML = "";
+
+  //Extrae el array pokemon de data
+  const data = jsonPokemon.pokemon;
 
   //Trae el valor del orden y el tipo seleccionado
   let selectedOrder = document.getElementById("order").value;
@@ -177,6 +193,9 @@ document.getElementById("order").addEventListener("change", () => {
 
   //Limpia div root
   mainBox.innerHTML = "";
+
+  //Extrae el array pokemon de data
+  const data = jsonPokemon.pokemon;
 
   //Trae el valor del orden y el tipo seleccionado
   let selectedOrder = document.getElementById("order").value;
