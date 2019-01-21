@@ -78,5 +78,26 @@ window.pokemonData = {
   //Funcion de calculo. Cuenta cuantos pokemones hay
   computeStats: (data) => {
     return data.length;
+  },
+
+  //Funcion de busqueda
+  searchData: (data, dataEntry) => {
+
+    //Si la busqueda se activa en blanco, retorna la data en su orden por default
+    if (dataEntry === "") {
+      return data;
+    }
+
+    //Revisa todos los tipos de pokemon y retorna a la data solo los que coinciden con la seleccion
+    const searchData = data.filter(element => {
+      let searchInput = dataEntry.toLowerCase();
+      let lowerCase = element.name.toLowerCase()
+      if(lowerCase.includes(searchInput)){
+        return element.name;
+      }else if(element.num.includes(searchInput)){
+        return element.num;
+      }
+    });
+    return searchData;
   }
 }

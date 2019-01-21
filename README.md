@@ -33,7 +33,7 @@ Se detallan a continuación 5 historias de usuario:
    * Quiero poder ingresar en la busqueda una o mas letras.
    * Quiero recibir un mensaje de error si mi búsqueda es errónea.
    * Quiero obtener como resultado el o los pokemones que cumplan con los criterios de busqueda (N° o letras).
-   ##### NO INICIADO
+   ##### TERMINADO
 5. Enunciado: Yo como usuario de la App quiero poder ver detalles particulares del pokemon que seleccione de       una lista.
    Criterio de Aceptación: 
    * Quiero poder ver imagen del pokemon.
@@ -48,31 +48,34 @@ Se detallan a continuación 5 historias de usuario:
    ##### EN PROCESO  
 
 
-#### Organizando las tareas
+### Organizando las tareas
 
-Tablero inicial
-<a href="https://ibb.co/dKJRKh2"><img src="https://i.ibb.co/884H8h5/tablero-inicial-1.jpg" alt="tablero-inicial-1" border="0"></a>
+#### Tablero 
 
-Tablero final Vista 1
-<a href="https://ibb.co/FgV0czs"><img src="https://i.ibb.co/5BFnCLY/tablero-final-1.jpg" alt="tablero-final-1" border="0"></a>
+![](./Pictures/Board.jpeg)
 
-Tablero final Vista 2
-<a href="https://ibb.co/MpLtbxk"><img src="https://i.ibb.co/Gkj8X4Q/tablero-final-2.jpg" alt="tablero-final-2" border="0"></a>
+#### Tablero final Vista 1
 
-### Diseño de la Interfaz de Usuario
+![](./Pictures/Finalboard.jpeg)
+ 
+#### Tablero final Vista 2
 
-#### Prototipo de baja fidelidad
+![](./Pictures/Finalboard2.jpeg)
 
-Prototipo Vista 1
-<a href="https://ibb.co/7SMB5SK"><img src="https://i.ibb.co/Zf4vPfx/prototipo-baja-fidelidad.jpg" alt="prototipo-baja-fidelidad" border="0"></a>
 
-Prototipo Vista 2
-<a href="https://ibb.co/jM4tHQh"><img src="https://i.ibb.co/xj5Z3Bh/Image-from-i-OS-2.jpg" alt="Image-from-i-OS-2" border="0"></a><br /><a target='_blank' href='https://aluminumsulfate.net/aluminum-oxide'>physical and chemical properties of aluminium oxide</a><br />
+## Diseño de la Interfaz de Usuario
 
-Flujo
-<a href="https://ibb.co/ZLxqpfh"><img src="https://i.ibb.co/6nFj7y4/FLUJO.jpg" alt="FLUJO" border="0"></a>
+### Prototipo de baja fidelidad
 
-#### Prototipo de alta fidelidad
+#### Prototipo
+
+![](./Pictures/Prototype.jpg)
+
+#### Flujo
+
+![](./Pictures/Flow.jpg)
+
+### Prototipo de alta fidelidad
 
 * Se realiza prototipado de alta fidelidad con Figma, link:
 

@@ -5,43 +5,53 @@ body{
 
 header{
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ), url(Imágenes/pokemon-i-choose-you.jpg);
-    background-size: cover;
-    background-position: center;
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),url(./Imágenes/header.jpg);
+    background-size: auto;
+    background-position: top;
     text-align: center;
     color: #B5FEA7;
-    padding: 4% 0 0 0;
     background-repeat: no-repeat;
+    padding: 2% 0;
 }
 
-#group{
-    margin-top: 10%;
-    background: linear-gradient(145.88deg, #E5FFE0 3.18%, #B5FEA7 28.3%, #B5FEA7 46.48%);
-    border-radius: 5rem 5rem 0px 0px;
-    width: 50%;
-    margin-bottom: 0;
+.material-icons{
+    display: block;
 }
 
-.row .col.s7{
+#searchBtn{
+    padding: 0.375rem;
+    color: #B5FEA7;
+    border-color: #B5FEA7;
+}
+
+#searchBtn:hover{
+    background-color: #B5FEA7;
+    color: #1D8696;
+}
+
+.form-inline{
+    flex-flow: initial;
+}
+
+.form-inline
+.form-control, #group{
+    width: -webkit-fill-available;
+}
+
+.row{
     justify-content: center;
     display: flex;
 }
 
-.select-wrapper input.select-dropdown{
-    border-bottom: 1px solid rgb(8, 42, 48);
-    font-size: 22px;
-}
-
-button, input, optgroup, select, textarea{
-    font-family: inherit;
-    color: rgb(8, 42, 48);
+.col, .col-sm-4{
+    width: inherit;
 }
 
 h5{
     padding: 0.75rem;
-    
+    color: #B5FEA7;
 }
 
 .card-title{
@@ -54,56 +64,36 @@ h5{
     width: inherit;
 }
 
-.card
-.card-content{
-    font-size: 16px;
-    padding: 20px 0px;
-}
-
-.buttonCard{
-    cursor: pointer;
-    color: inherit;
-}
-
-.card.small{
+.card{
     transition: 0.25s;
-    max-width: 235px;
-    min-width: 149px;
+    max-width: 15rem;
     justify-content: center;
     display: flex;
+    margin-bottom: 13%;
+    cursor: pointer;
 }
 
-.card.small:hover,
-.card.small:focus{
+.card:hover,
+.card:focus{
     box-shadow: 2px 7px 7px 2px rgba(0,0,0,0.65);
     transform: translateY(-0.30em);
 }
 
 .modal{
     z-index: 2;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
     min-width: 100%;
     min-height: 100%;
 }
 
-.modal .modal-content{
-    margin: 15% 25%;
-    padding: 0;
-}
-
-.white{
-    background-color: #ffffff;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-}
-
-h4{
-    padding-top: 5px;
-}
-
-.card.horizontal{
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 0 0 rgba(0,0,0,0.2)
-}
 #pokemones{
-    background: linear-gradient(145.88deg, #B5FEA7 28.3%, #B5FEA7 46.48%);
+    background-image: url(./Imágenes/background.jpg);;
     padding: 2% 0;
+    min-height: 100%;
+}
+
+#root{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    justify-content: left;
+    padding: 2% 0 0 1%;
 }

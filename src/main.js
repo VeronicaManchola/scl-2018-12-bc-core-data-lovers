@@ -16,29 +16,23 @@ fetch(jsonFile)
   })
   .catch(error => {
     mainBox.innerHTML = "Error: " + error;
-});
-
-
-//Inicialización de elementos de Materialize
-document.addEventListener('DOMContentLoaded', function () {
-  window.M.AutoInit();
-});
+  });
 
 //Imprime tarjetas de todos los pokemones al cargar la pagina
 const initialWindow = (jsonPokemon) => {
-  
+
   //Extrae el array pokemon de data
   const data = jsonPokemon.pokemon;
 
   //Recorre la data y agrega cada tarjeta con la informacion requerida a mainBox
   data.forEach(element => {
     mainBox.innerHTML +=
-      `<div class="col s7 m4 l3">
-        <div class="card small">
-          <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
-            <div class="card-title">#${element.num} ${element.name}</div>
-            <div class="card-image" style="overflow: initial">
-              <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+      `<div class="col-sm-4 col-md-4 col-lg-3">
+        <div class="card">
+          <a class="buttonCard" id="infobtn${element.id}" data-toggle="modal" data-target="modal1">
+            <h4 class="card-title">#${element.num} ${element.name}</h4>
+            <div class="card-img-top">
+              <img class="img-fluid" alt="Responsive image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
             <div class="card-content">
               <p>${element.type.join(" - ")}</p>
@@ -50,32 +44,36 @@ const initialWindow = (jsonPokemon) => {
 
   //Recorrre la data
   data.forEach(element => {
-    let button = document.getElementById("infobtn" + element.id);
+    let detailsBtn = document.getElementById("infobtn" + element.id);
 
     //Funcion que se activa cuando se le da click a una de las tarjetas de pokemones
-    button.onclick = function () {
+    detailsBtn.onclick = function () {
       createModal = document.createElement("div");
       createModal.setAttribute("id", "modal1");
-      createModal.setAttribute("class", "modal");
+      createModal.setAttribute("class", "modal")
+      createModal.setAttribute("tabindex", "-1");
+      createModal.setAttribute("role", "dialog");
+      createModal.setAttribute("aria-labelledby", "myLargeModalLabel");
+      createModal.setAttribute("aria-hidden", "true");
       mainBody.insertBefore(createModal, header);
 
       //Crea un modal con los detalles del pokemon al que se le hizo click y lo agrega en todo el documento
       createModal.innerHTML = `
-      <div class="modal-content">
-        <div class="white">
-          <h4>#${element.num} ${element.name}</h4>
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">#${element.num} ${element.name}</h4>
+          </div>
           <div class="row">
-            <div class="col l5">
+            <div class="col lg-5">
               <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
-            <div class="col l6">
-              <div class="card-stacked">
-                <div class="card-content">
-                    <h6>Altura: ${element.height}</h6>
-                    <h6>Peso: ${element.weight}</h6>
-                    <h6>Huevo: ${element.egg}</h6>
-                    <h6>Debilidades: ${element.weaknesses.join(" - ")}</h6>
-                </div>
+            <div class="col lg-6">
+              <div class="list-group list-group-flush">
+                <h6 class="list-group-item">Altura: ${element.height}</h6>
+                <h6 class="list-group-item">Peso: ${element.weight}</h6>
+                <h6 class="list-group-item">Huevo: ${element.egg}</h6>
+                <h6 class="list-group-item">Debilidades: ${element.weaknesses.join(" - ")}</h6>
               </div>
             </div>
           </div>
@@ -119,18 +117,20 @@ document.getElementById("type").addEventListener("change", () => {
 
   //Crea enunciado del total de pokemones y lo imprime antes de las tarjetas
   createTotal = document.createElement("h5");
+  createTotal.setAttribute("class", "col-12");
+  createTotal.setAttribute("id","total");
   mainBox.appendChild(createTotal);
   createTotal.innerHTML = `Total de tu selección: ${totalPokemon}`
 
   //Recorre la data del tipo seleccionado y agrega cada tarjeta con la informacion requerida a mainBox
   newData.forEach(element => {
     mainBox.innerHTML +=
-      `<div class="col s7 m4 l3">
-        <div class="card small">
-          <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
-            <div class="card-title">#${element.num} ${element.name}</div>
-            <div class="card-image" style="overflow: initial">
-              <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+      `<div class="col-sm-4 col-md-4 col-lg-3">
+        <div class="card">
+          <a class="buttonCard" id="infobtn${element.id}" data-toggle="modal" data-target="modal1">
+            <h4 class="card-title">#${element.num} ${element.name}</h4>
+            <div class="card-img-top">
+              <img class="img-fluid" alt="Responsive image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
             <div class="card-content">
               <p>${element.type.join(" - ")}</p>
@@ -142,32 +142,36 @@ document.getElementById("type").addEventListener("change", () => {
 
   //Recorre la data
   newData.forEach(element => {
-    let button = document.getElementById("infobtn" + element.id);
+    let detailsBtn = document.getElementById("infobtn" + element.id);
 
     //Funcion que se activa cuando se le da click a una de las tarjetas de pokemones
-    button.onclick = function () {
+    detailsBtn.onclick = function () {
       createModal = document.createElement("div");
       createModal.setAttribute("id", "modal1");
-      createModal.setAttribute("class", "modal");
+      createModal.setAttribute("class", "modal")
+      createModal.setAttribute("tabindex", "-1");
+      createModal.setAttribute("role", "dialog");
+      createModal.setAttribute("aria-labelledby", "myLargeModalLabel");
+      createModal.setAttribute("aria-hidden", "true");
       mainBody.insertBefore(createModal, header);
 
       //Crea un modal con los detalles del pokemon al que se le hizo click y lo agrega en todo el documento
       createModal.innerHTML = `
-      <div class="modal-content">
-        <div class="white">
-          <h4>#${element.num} ${element.name}</h4>
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">#${element.num} ${element.name}</h4>
+          </div>
           <div class="row">
-            <div class="col l5">
+            <div class="col lg-5">
               <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
-            <div class="col l6">
-              <div class="card-stacked">
-                <div class="card-content">
-                    <h6>Altura: ${element.height}</h6>
-                    <h6>Peso: ${element.weight}</h6>
-                    <h6>Huevo: ${element.egg}</h6>
-                    <h6>Debilidades: ${element.weaknesses.join(" - ")}</h6>
-                </div>
+            <div class="col lg-6">
+              <div class="list-group list-group-flush">
+                <h6 class="list-group-item">Altura: ${element.height}</h6>
+                <h6 class="list-group-item">Peso: ${element.weight}</h6>
+                <h6 class="list-group-item">Huevo: ${element.egg}</h6>
+                <h6 class="list-group-item">Debilidades: ${element.weaknesses.join(" - ")}</h6>
               </div>
             </div>
           </div>
@@ -177,15 +181,15 @@ document.getElementById("type").addEventListener("change", () => {
       //Muestra el modal
       createModal.style.display = "block";
 
+      let closeModal = document.getElementById("close" + element.id);
       //Cierra el modal cuando se le hace click al area sombreada
       window.onclick = function (event) {
-        if (event.target == createModal) {
+        if (event.target == createModal || event.target == closeModal) {
           createModal.style.display = "none";
         }
       }
     }
   });
-
 });
 
 //Organiza los pokemones por el orden deseado e imprime las tarjetas respectivas
@@ -212,18 +216,19 @@ document.getElementById("order").addEventListener("change", () => {
 
   //Crea enunciado del total de pokemones y lo imprime antes de las tarjetas
   createTotal = document.createElement("h5");
+  createTotal.setAttribute("class", "col-12");
   mainBox.appendChild(createTotal);
   createTotal.innerHTML = `Total de tu selección: ${totalPokemon}`
 
   //Recorre la data, la organiza y agrega cada tarjeta con la informacion requerida a mainBox
   newData.forEach(element => {
     mainBox.innerHTML +=
-      `<div class="col s7 m4 l3">
-        <div class="card small">
-          <a class="buttonCard" id="infobtn${element.id}" data-target="modal1">
-            <div class="card-title">#${element.num} ${element.name}</div>
-            <div class="card-image" style="overflow: initial">
-              <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+      `<div class="col-sm-4 col-md-4 col-lg-3">
+        <div class="card">
+          <a class="buttonCard" id="infobtn${element.id}" data-toggle="modal" data-target="modal1">
+            <h4 class="card-title">#${element.num} ${element.name}</h4>
+            <div class="card-img-top">
+              <img class="img-fluid" alt="Responsive image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
             <div class="card-content">
               <p>${element.type.join(" - ")}</p>
@@ -235,32 +240,36 @@ document.getElementById("order").addEventListener("change", () => {
 
   //Recorre la data
   newData.forEach(element => {
-    let button = document.getElementById("infobtn" + element.id);
+    let detailsBtn = document.getElementById("infobtn" + element.id);
 
     //Funcion que se activa cuando se le da click a una de las tarjetas de pokemones
-    button.onclick = function () {
+    detailsBtn.onclick = function () {
       createModal = document.createElement("div");
       createModal.setAttribute("id", "modal1");
-      createModal.setAttribute("class", "modal");
+      createModal.setAttribute("class", "modal")
+      createModal.setAttribute("tabindex", "-1");
+      createModal.setAttribute("role", "dialog");
+      createModal.setAttribute("aria-labelledby", "myLargeModalLabel");
+      createModal.setAttribute("aria-hidden", "true");
       mainBody.insertBefore(createModal, header);
 
       //Crea un modal con los detalles del pokemon al que se le hizo click y lo agrega en todo el documento
       createModal.innerHTML = `
-      <div class="modal-content">
-        <div class="white">
-          <h4>#${element.num} ${element.name}</h4>
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">#${element.num} ${element.name}</h4>
+          </div>
           <div class="row">
-            <div class="col l5">
+            <div class="col lg-5">
               <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
             </div>
-            <div class="col l6">
-              <div class="card-stacked">
-                <div class="card-content">
-                    <h6>Altura: ${element.height}</h6>
-                    <h6>Peso: ${element.weight}</h6>
-                    <h6>Huevo: ${element.egg}</h6>
-                    <h6>Debilidades: ${element.weaknesses.join(" - ")}</h6>
-                </div>
+            <div class="col lg-6">
+              <div class="list-group list-group-flush">
+                <h6 class="list-group-item">Altura: ${element.height}</h6>
+                <h6 class="list-group-item">Peso: ${element.weight}</h6>
+                <h6 class="list-group-item">Huevo: ${element.egg}</h6>
+                <h6 class="list-group-item">Debilidades: ${element.weaknesses.join(" - ")}</h6>
               </div>
             </div>
           </div>
@@ -270,9 +279,10 @@ document.getElementById("order").addEventListener("change", () => {
       //Muestra el modal
       createModal.style.display = "block";
 
+      let closeModal = document.getElementById("close" + element.id);
       //Cierra el modal cuando se le hace click al area sombreada
       window.onclick = function (event) {
-        if (event.target == createModal) {
+        if (event.target == createModal || event.target == closeModal) {
           createModal.style.display = "none";
         }
       }
@@ -280,4 +290,102 @@ document.getElementById("order").addEventListener("change", () => {
   });
 });
 
+//Filtra pokemones por el tipo seleccionado e imprime las tarjetas respectivas
+document.getElementById("searchBtn").addEventListener("click", (event) => {
 
+  event.preventDefault();
+
+  //Limpia div root
+  mainBox.innerHTML = "";
+
+  //Extrae el array pokemon de data
+  const data = jsonPokemon.pokemon;
+
+  //Trae el valor del orden y el de busqueda
+  //let selectedOrder = document.getElementById("order").value;
+  let dataEntry = document.getElementById("searchInput").value;
+
+  //Funcion de organizado para confirmar el orden deseado 
+  //const dataOnSort = window.pokemonData.sortData(data, selectedOrder);
+
+  //Funcion de busqueda dependiendo de lo entrado en la barra
+  const newData = window.pokemonData.searchData(data, dataEntry);
+
+  //Calcula el total de pokemones del tipo seleccionado
+  const totalPokemon = window.pokemonData.computeStats(newData);
+
+  //Crea enunciado del total de pokemones y lo imprime antes de las tarjetas
+  createTotal = document.createElement("h5");
+  createTotal.setAttribute("class", "col-12");
+  mainBox.appendChild(createTotal);
+  createTotal.innerHTML = `Total de tu selección: ${totalPokemon}`
+
+  //Recorre la data del tipo seleccionado y agrega cada tarjeta con la informacion requerida a mainBox
+  newData.forEach(element => {
+    mainBox.innerHTML +=
+      `<div class="col-sm-4 col-md-4 col-lg-3">
+        <div class="card">
+          <a class="buttonCard" id="infobtn${element.id}" data-toggle="modal" data-target="modal1">
+            <h4 class="card-title">#${element.num} ${element.name}</h4>
+            <div class="card-img-top">
+              <img class="img-fluid" alt="Responsive image" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+            </div>
+            <div class="card-content">
+              <p>${element.type.join(" - ")}</p>
+            </div>
+          </a>
+        </div>
+      </div>`;
+  });
+
+  //Recorre la data
+  newData.forEach(element => {
+    let detailsBtn = document.getElementById("infobtn" + element.id);
+
+    //Funcion que se activa cuando se le da click a una de las tarjetas de pokemones
+    detailsBtn.onclick = function () {
+      createModal = document.createElement("div");
+      createModal.setAttribute("id", "modal1");
+      createModal.setAttribute("class", "modal")
+      createModal.setAttribute("tabindex", "-1");
+      createModal.setAttribute("role", "dialog");
+      createModal.setAttribute("aria-labelledby", "myLargeModalLabel");
+      createModal.setAttribute("aria-hidden", "true");
+      mainBody.insertBefore(createModal, header);
+
+      //Crea un modal con los detalles del pokemon al que se le hizo click y lo agrega en todo el documento
+      createModal.innerHTML = `
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">#${element.num} ${element.name}</h4>
+          </div>
+          <div class="row">
+            <div class="col lg-5">
+              <img class="responsive-img" src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${element.num}.png">
+            </div>
+            <div class="col lg-6">
+              <div class="list-group list-group-flush">
+                <h6 class="list-group-item">Altura: ${element.height}</h6>
+                <h6 class="list-group-item">Peso: ${element.weight}</h6>
+                <h6 class="list-group-item">Huevo: ${element.egg}</h6>
+                <h6 class="list-group-item">Debilidades: ${element.weaknesses.join(" - ")}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+      //Muestra el modal
+      createModal.style.display = "block";
+
+      let closeModal = document.getElementById("close" + element.id);
+      //Cierra el modal cuando se le hace click al area sombreada
+      window.onclick = function (event) {
+        if (event.target == createModal || event.target == closeModal) {
+          createModal.style.display = "none";
+        }
+      }
+    }
+  });
+});
