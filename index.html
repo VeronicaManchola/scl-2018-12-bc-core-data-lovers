@@ -6,15 +6,15 @@
   <title>Pokedex Kanto</title>
   <link rel="shortcut icon" href="./Imágenes/favicon.ico">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
   <!--Import Google Font-->
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!--Import Google Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -22,71 +22,81 @@
 <body>
 
   <header id="header">
-    <div class="container">
-      <div class="row">
-        <div class="col l12">
-          <h1 class="">POKEDEX KANTO</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col l8 offset-l2">
-          <h4>Para que te conviertas en un maestro Pokemon</h4>
-        </div>
-      </div>
-      <div class="row" id="group">
-        <div class="col s9 l5 offset-s2 offset-l1">
-          <form name="form1" class="input-field" autocomplete="off">
-            <select id="type">
-              <option value="0" selected="selected">Tipo</option>
-              <option value="Grass">Planta</option>
-              <option value="Poison">Veneno</option>
-              <option value="Fire">Fuego</option>
-              <option value="Bug">Bicho</option>
-              <option value="Flying">Volador</option>
-              <option value="Normal">Normal</option>
-              <option value="Electric">Eléctrico</option>
-              <option value="Ground">Tierra</option>
-              <option value="Water">Agua</option>
-              <option value="Fighting">Lucha</option>
-              <option value="Psychic">Psíquico</option>
-              <option value="Rock">Roca</option>
-              <option value="Ghost">Fantasma</option>
-              <option value="Ice">Hielo</option>
-              <option value="Dragon">Dragón</option>
-            </select>
-          </form>
-        </div>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img src="./Imágenes/nav image.png" width="80" height="40" class="d-inline-block align-top" alt="">
+        <span class="navbar-text">
+          Pokedex Kanto
+        </span>
+      </a>
 
-        <div class="col s9 l5 offset-s2">
-          <form name="form2" class="input-field" autocomplete="off">
-            <select id="order" class="select">
-              <option value="0" selected="selected">Orden</option>
-              <option value="az">A-Z</option>
-              <option value="za">Z-A</option>
-              <option value="lower">1-151</option>
-              <option value="higher">151-1</option>
-            </select>
-          </form>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="row" id="group">
+          <div class="col-sm-9 col-lg-2 offset-lg-2">
+            <form name="form1" class="input-field" autocomplete="off">
+              <select id="type" class="custom-select">
+                <option value="0" selected="selected">Tipo</option>
+                <option value="Grass">Planta</option>
+                <option value="Poison">Veneno</option>
+                <option value="Fire">Fuego</option>
+                <option value="Bug">Bicho</option>
+                <option value="Flying">Volador</option>
+                <option value="Normal">Normal</option>
+                <option value="Electric">Eléctrico</option>
+                <option value="Ground">Tierra</option>
+                <option value="Water">Agua</option>
+                <option value="Fighting">Lucha</option>
+                <option value="Psychic">Psíquico</option>
+                <option value="Rock">Roca</option>
+                <option value="Ghost">Fantasma</option>
+                <option value="Ice">Hielo</option>
+                <option value="Dragon">Dragón</option>
+              </select>
+            </form>
+          </div>
+
+          <div class="col-sm-9 col-lg-2">
+            <form name="form2" class="input-field" autocomplete="off">
+              <select id="order" class="custom-select">
+                <option value="0" selected="selected">Orden</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+                <option value="lower">1-151</option>
+                <option value="higher">151-1</option>
+              </select>
+            </form>
+          </div>
+
+          <div class="col-sm-9 col-lg-2">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="searchBtn"><i class="material-icons">search</i></button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
+
   <section id="pokemones">
     <div class="container">
       <div id="root" class="row"></div>
     </div>
   </section>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
   <!-- <script src="./data/injuries/injuries.js"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./data/pokemon/pokemon.js"></script>
   <!-- <script src="./data/steam/steam.js"></script> -->
   <!-- <script src="./data/worldbank/worldbank.js"></script> -->
   <!-- <script src="./data/lol/lol.js"></script> -->
   <script src="data.js"></script>
   <script src="main.js"></script>
-  <!-- Compiled and minified JavaScript -->
 
   <footer></footer>
 </body>
