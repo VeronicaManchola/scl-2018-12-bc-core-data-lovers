@@ -18,6 +18,12 @@ fetch(jsonFile)
     mainBox.innerHTML = "Error: " + error;
   });
 
+//Sube al principio cuando se le hace click
+
+arrowUp.addEventListener("click", () => {
+  header.scrollIntoView(false);
+})
+
 //Imprime tarjetas de todos los pokemones al cargar la pagina
 const initialWindow = (jsonPokemon) => {
 

@@ -20,6 +20,14 @@ header{
     display: block;
 }
 
+#searchBar{
+    display: inline-table;
+}
+
+#searchInput{
+    margin-left: auto; 
+}
+
 #searchBtn{
     padding: 0.375rem;
     color: #B5FEA7;
@@ -35,18 +43,21 @@ header{
     flex-flow: initial;
 }
 
-.form-inline
-.form-control, #group{
+#navbarSupportedContent,
+#group{
+    justify-content: right;
+}
+
+.form-inline, 
+.form-control,
+#group{
     width: -webkit-fill-available;
+    width: -moz-available;
 }
 
 .row{
     justify-content: center;
     display: flex;
-}
-
-.col, .col-sm-4{
-    width: inherit;
 }
 
 h5{
@@ -96,4 +107,23 @@ h5{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     justify-content: left;
     padding: 2% 0 0 1%;
+}
+
+.arrowBtn{
+    color: #B5FEA7;
+    background-color: #1D8696;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 1rem;
+    margin-right: 1rem; 
+    cursor: pointer;
+}
+
+.arrowBtn:hover,
+.arrowBtn:focus{
+    box-shadow: 1px 3px 3px 1px rgba(0,0,0,0.65);
+    transform: translateY(-0.15em);
 }
